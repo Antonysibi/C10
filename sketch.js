@@ -9,23 +9,25 @@ ship_sailing = loadAnimation("ship-1.png","ship-2.png","ship-3.png","ship-4.png"
 
 function setup(){
   createCanvas(400,400);
-  ship = createSprite(400,200)
-  ship.addAnimation("movingShip",seaImg1);
-  
-  ship.scale = 0.25;
-  ship.x = 50
-
-  sea = createSprite(130,200,30,30);
+  background ("blue")
+  sea = createSprite(400,200);
   sea.addImage(seaImg);
-  ground.x = ground.width/2;
+  sea.velocityX = -3
   sea.scale=0.3;
+
+  
+  ship = createSprite(130,200,30,30)
+  ship.addAnimation("movingShip",ship_sailing);
+  ship.scale = 0.25;
+  
+
 }
 
 function draw() {
-  background("blue");
-  sea.velocityx = -5;
+  background("0")
+   sea.velocityX = -3;
   if(sea.x < 0 ){
-    ground.x = ground.width/2
+   sea.x = sea.width/8
   }
  drawSprites();
 }
